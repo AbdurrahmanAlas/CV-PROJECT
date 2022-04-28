@@ -1,0 +1,93 @@
+﻿@model cv1.Models.Projeler
+
+
+
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Views/Shared/adminLayout.cshtml";
+}
+
+
+
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Kayseri Blog Sitesi | Home :: w3layouts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="~/web/css1/style.css" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/web/css1/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="~/web/js/jquery.min.js"></script>
+    <script src="~/web/js/responsiveslides.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 1
+            $("#slider1").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+            });
+        });
+    </script>
+</head>
+<body>
+ 
+    <div >
+       
+        <div class="btn btn-primary">  <a href="/Home/Index#news"><b style="color:white">➜ Projelere Dön</b></a></div>
+                <div class="indent">
+                    <h4 style="color:blue">@Model.ProjeAd</h4>
+                  
+                    
+                    <br />
+                 
+              
+                    <div class="header_bottom_right_images">
+
+                        <div class="slider" style="background-color:#53aaf5">
+                            <div class="rslides" id="slider1">
+                                @{ int i = 0;}
+                                @foreach (var item in ViewBag.image)
+                                {
+
+                                    i++;
+                                    var active = i == 1 ? "active" : "";
+
+                                    <div class="item @active">
+                                        <img src="/Content/Resim/@item.ResimAd " style="width:870px;height:510px;" alt="...">
+
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+               
+               
+            </div>
+          
+        
+    </div>
+    @*<div class"content">
+        <div class="wrap">
+            <div class="wrapper">
+                <div class="con-top">
+                    <h3>Welcome to our Travel Company!</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facil</p>
+                </div>
+              
+            </div>
+        </div>
+    </div>*@
+  
+</body>
+</html>
